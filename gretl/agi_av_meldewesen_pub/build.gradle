@@ -25,6 +25,7 @@ tasks.register('downloadFile', Download) {
 tasks.register('importData', Ili2pgImport) {
     dependsOn 'downloadFile'
     database = [dbUriPub, dbUserPub, dbPwdPub]
+    models = "SO_AGI_SGV_Meldungen_20221109"
     dbschema = "agi_av_meldewesen_work_pub_v1"
     dataFile = Paths.get(pathToTempFolder, fileName).toFile().getAbsolutePath()
     deleteData = true
